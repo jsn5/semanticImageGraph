@@ -1,3 +1,4 @@
 Flask
 gunicorn
-urllib3
+tensorflow
+werkzeug

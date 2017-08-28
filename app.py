@@ -23,7 +23,7 @@ def allowed_file(filename):
 # jQuery is loaded to execute the request and update the
 # value of the operation
 @app.route('/')
-def index():
+def homepage():
 	return render_template('index.html')
 
 

@@ -70,7 +70,8 @@ def upload():
 			for node_id in top_k:
 				human_string = label_lines[node_id]
 				score = predictions[0][node_id]
-				result += str('%s, \n' % (human_string))
+				if huma_string != 'pagoda':
+					result += str('%s, \n' % (human_string))
 		return result
 
 # This route is expecting a parameter containing the name

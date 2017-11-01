@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link href= "{{ url_for('static',filename='styles/style.css') }}">
+    <style>
+    body{
+    background:url("{{ url_for('static',filename='images/back.jpg') }}");
+    background-size: cover; 
+
+    }
+
+    table{
+      background-color: rgba(255,255,255,0.5);
+    }
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2 class="text-muted">Semantic Image Graph</h2>
+      </div>
+      <hr/>
+      <div>
+      </div>
+      <div class='main'>
+      <img height="300px" width="300px" src="{{ path }}"></img>
+      <br/>
+      <br/>
+        <table border='1px'>
+          <tr>
+          <th>Wornet Id</th>
+          <th>Sysnet</th>
+          <th>Score</th>
+          </tr>
+
+          {% for i in result %}
+         
+            <tr>
+               <td> {{ i[0] }} </td>
+               <td> {{ i[1] }} </td>
+               <td> {{ i[2] }} </td>
+            </tr>
+            
+         {% endfor %}
+      <img height="400px" width="500px" src='uploads/result.png'></img>  
+               
+      </div>
+  </body>
+</html>
+
+
+

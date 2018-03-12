@@ -145,10 +145,10 @@ def upload():
 			values = [val_map.get(node, 0.15) for node in G.nodes()]
 			print(lch_list)
 			nx.draw(G, width=2, with_labels=True,cmap=plt.get_cmap('jet'),alpha=0.9,node_color=values,font_size=12,font_weight='bold',font_color='#ff4949')
-			plt.savefig("uploads/result.png")
+			plt.savefig("uploads/result"+str(filename))
 			plt.clf()
 
-		return render_template('result.html',result=result,path=image_path)
+		return render_template('result.html',result=result,path=image_path,result_path="uploads/result"+str(filename))
 
 # This route is expecting a parameter containing the name
 # of a file. Then it will locate that file on the upload
